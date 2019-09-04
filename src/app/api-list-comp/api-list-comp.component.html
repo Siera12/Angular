@@ -1,0 +1,59 @@
+<p>api-list-comp works!</p>
+<button (click) = "get_students()"> Get All Students </button>
+<ul *ngIf="students">
+  
+    <li *ngFor="let student of students" >
+      -- City {{student.City}}
+      -- First Name: {{student.F_Name}}
+      -- Last Name: {{student.L_Name}}
+      -- id: {{student.RollNo}} <button (click)="DeleteStudent(student.RollNo)"> Delete </button>
+    </li>
+  </ul> 
+  <form  [formGroup]="SearchStudentForm">
+      <div> 
+        <label for="RollNo">Enter Rn </label>
+      <input type="text" formControlName="RollNo" id="RollNo"/>
+      </div>
+      <div *ngIf="student">
+        FOUND
+      </div>
+      <!-- <div> 
+          <label for="FName">Enter FirstName </label>
+        <input type="text" formControlName="F_Name" id="FName"/>
+        </div>
+        <div> 
+            <label for="LName">Enter Last Name </label>
+          <input type="text" formControlName="L_Name" id="LName"/>
+          </div>
+          <div> 
+              <label for="City">Enter City </label>
+            <input type="text" formControlName="City" id="City"/>
+            </div> -->
+              
+        <button (click)="get_student_by_RollNo()">Insert </button>
+       
+    </form>
+   
+   
+  <form  [formGroup]="InsertStudentForm">
+    <div> 
+      <label for="RollNo">Enter Rn </label>
+    <input type="text" formControlName="RollNo" id="RollNo"/>
+    </div>
+    <div> 
+        <label for="FName">Enter FirstName </label>
+      <input type="text" formControlName="F_Name" id="FName"/>
+      </div>
+      <div> 
+          <label for="LName">Enter Last Name </label>
+        <input type="text" formControlName="L_Name" id="LName"/>
+        </div>
+        <div> 
+            <label for="City">Enter City </label>
+          <input type="text" formControlName="City" id="City"/>
+          </div>
+            
+      <button (click)="OnInsertStudent()">Insert </button>
+     
+  </form>
+ 
